@@ -618,7 +618,7 @@ sudo passwd root
 sudo vim /etc/ssh/sshd_config
 # 找到并改成 / 添加：PermitRootLogin yes
 # 同时确认：PasswordAuthentication yes
-
+# 如果sshd_config里包含Include /etc/ssh/sshd_config.d/*.conf，需要确保sshd_config.d文件夹下的*.conf中PasswordAuthentication yes
 # ③ ★ 先校验配置语法，再重载 —— 配置写错又直接 restart 会让你再也登不上
 sudo sshd -t
 
